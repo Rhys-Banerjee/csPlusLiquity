@@ -1,21 +1,12 @@
 {
   "canisters": {
-    "Liquity_cs_plus": {
-      "main": "src/Liquity_cs_plus/main.mo",
+    "Product": {
+      "main": "src/Product/main.mo",
       "type": "motoko"
     },
-    "Liquity_cs_plus_assets": {
-      "dependencies": [
-        "Liquity_cs_plus"
-      ],
-      "frontend": {
-        "entrypoint": "src/Liquity_cs_plus_assets/src/index.html"
-      },
-      "source": [
-        "src/Liquity_cs_plus_assets/assets",
-        "dist/Liquity_cs_plus_assets/"
-      ],
-      "type": "assets"
+    "User": {
+      "main": "src/User/main.mo",
+      "type": "motoko"
     }
   },
   "defaults": {
