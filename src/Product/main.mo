@@ -29,6 +29,6 @@ actor {
     SDR_product_supply += n;
     // burn SDR
     burn_SDR_product(n);
-  }
+  };
   
 };
