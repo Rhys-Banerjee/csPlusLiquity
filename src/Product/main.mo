@@ -1,7 +1,6 @@
 actor {
- // import User "canister:User";
   var ICP_product_supply = 100;
-  var SDR_product_supply = 100;
+  var SDR_product_supply = 10000;
 
   public func mint_SDR_product(n: Nat) {
     SDR_product_supply += n;
@@ -15,18 +14,21 @@ actor {
   public func burn_SDR_product(n: Nat) {
     SDR_product_supply -= n;
   };
-  public func transfer( n : Text) : async Text {
-        // burn n SDR tokens
-        // Product ICP portfolio decreases by n tockens.
-        // User ICP portfolio increases by n tokens.
-        return n # " ICP tokens has been transfered to User";
-    };
-//   public func transferr(
-//       receiver : shared () -> async (),
-//       amount : Nat) : async { refunded : Nat } {
-//           Cycles.add(amount);
-//           await receiver();
-//           { refunded = Cycles.refunded() };
-//       };
+
+  public func transferSDR_fromProd( n : Nat) {
+        //Increase ICP by n tokens
+        ICP_product_supply += n;
+        //Create SDR
+        mint_SDR_product(n);
+        //Transfer from Product to User canister
+        SDR_product_supply -= n;
+  };
+  public func transferICP_fromProd( n : Nat) {
+    // Decrease ICP by n tokens
+    ICP_product_supply -= n;
+    SDR_product_supply += n;
+    // burn SDR
+    burn_SDR_product(n);
+  }
   
 };
