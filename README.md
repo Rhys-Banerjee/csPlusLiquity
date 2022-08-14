@@ -1,4 +1,6 @@
-# Liquity_cs_plus
+# Liquity_CS_plus
+
+##This was an early demo for a decentralized borrowing protocol based off Liquity. This repository is not complete nor functional.
 
 Welcome to your new Liquity_cs_plus project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
 
